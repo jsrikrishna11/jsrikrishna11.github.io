@@ -10,9 +10,28 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-      font-family: "Comic Sans MS", cursive, sans-serif;
+
+      /* Heart emoji background */
+      background-color: #ffdde1;
+      background-image: repeating-linear-gradient(
+        0deg,
+        transparent 0,
+        transparent 40px
+      );
+      position: relative;
+      overflow: hidden;
     }
+    body::before {
+      content: "💖 💕 💗 💘 💝 💞";
+      position: absolute;
+      inset: 0;
+      font-size: 32px;
+      line-height: 60px;
+      letter-spacing: 20px;
+      opacity: 0.25;
+      white-space: pre-wrap;
+      pointer-events: none;
+    } 
 
     .card {
       background: white;
