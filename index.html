@@ -86,6 +86,7 @@
 
   <script>
     let inAreYouSureMode = false;
+    let rotation = 0;
 
     function handleNo() {
       // Switch to "Are you sure?" mode
@@ -105,7 +106,8 @@
     function handleYes() {
       img = document.getElementById("img_src");
       if(inAreYouSureMode){
-        img.style.transform = "rotate(90deg)";
+        rotation += 90;
+        img.style.transform = `rotate(${rotation}deg)`;
       }
       else {
         img.src = "/artifacts/yayy.jpg";
