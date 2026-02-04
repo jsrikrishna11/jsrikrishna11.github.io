@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>❤️ Application Request</title>
+  <title>Be My Valentine 💘</title>
   <style>
     body {
       margin: 0;
@@ -20,6 +20,13 @@
       border-radius: 20px;
       text-align: center;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      min-width: 320px;
+    }
+
+    .emoji {
+      font-size: 80px;
+      margin-bottom: 20px;
+      display: none;
     }
 
     .question {
@@ -60,25 +67,35 @@
 </head>
 <body>
   <div class="card">
-    <div class="question">
+    <div id="emoji" class="emoji">😿</div>
+
+    <div id="question" class="question">
       Anjudu.... will you be my valentine???? 💖
     </div>
 
     <div class="buttons">
-      <button class="yes">Yes</button>
+      <button class="yes" onclick="handleYes()">Yes</button>
       <button class="no" onclick="handleNo()">No</button>
     </div>
   </div>
 
   <script>
+    let inAreYouSureMode = false;
+
     function handleNo() {
-      while (true) {
-        const response = confirm("Are you sure?");
-        if (!response) {
-          // User clicked "No", so stop looping
-          break;
-        }
-        // If "Yes" is clicked, loop continues and dialog reopens
+      // Switch to "Are you sure?" mode
+      document.getElementById("emoji").style.display = "block";
+      document.getElementById("question").textContent = "Are you sure?";
+      inAreYouSureMode = true;
+    }
+
+    function handleYes() {
+      if (inAreYouSureMode) {
+        // Re-trigger the same "Are you sure?" state (loop)
+        document.getElementById("emoji").style.display = "block";
+        document.getElementById("question").textContent = "Are you sure?";
+      } else {
+        alert("Yayyyy! 💖🥰");
       }
     }
   </script>
