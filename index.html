@@ -1,5 +1,86 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>❤️ Application Requesnt</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: "Comic Sans MS", cursive, sans-serif;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .question {
+      font-size: 24px;
+      color: #e63946;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    button {
+      padding: 12px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    .yes {
+      background-color: #ff4d6d;
+      color: white;
+    }
+
+    .no {
+      background-color: #adb5bd;
+      color: white;
+    }
+  </style>
+</head>
 <body>
-  <h1>Welcome to my website!</h1>
+  <div class="card">
+    <div class="question">
+      Anjudu.... will you be my valentine???? 💖
+    </div>
+
+    <div class="buttons">
+      <button class="yes">Yes</button>
+      <button class="no" onclick="handleNo()">No</button>
+    </div>
+  </div>
+
+  <script>
+    function handleNo() {
+      while (true) {
+        const response = confirm("Are you sure?");
+        if (!response) {
+          // User clicked "No", so stop looping
+          break;
+        }
+        // If "Yes" is clicked, loop continues and dialog reopens
+      }
+    }
+  </script>
 </body>
 </html>
