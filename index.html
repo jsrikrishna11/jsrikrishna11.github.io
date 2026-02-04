@@ -89,26 +89,29 @@
 
     function handleNo() {
       // Switch to "Are you sure?" mode
+      img = document.getElementById("img_src");
       if(inAreYouSureMode){
         document.getElementById("question").textContent = "Anjudu.... will you be my valentine???? 💖";
-        document.getElementById("img_src").src = "/artifacts/request.JPG";
+        img.src = "/artifacts/request.JPG";
         inAreYouSureMode = false;
         return;
       }
-      document.getElementById("img_src").src = "/artifacts/sure.png";
+      img.src = "/artifacts/sure.png";
       document.getElementById("question").textContent = "Are you sure?";
       inAreYouSureMode = true;
 
     }
 
     function handleYes() {
+      img = document.getElementById("img_src");
       if(inAreYouSureMode){
-        document.getElementById("question").textContent = document.getElementById("question").textContent+"😿";
+        img.style.transform = "rotate(90deg)";
       }
       else {
-        document.getElementById("img_src").src = "/artifacts/yayy.jpg";
-        document.getElementsByClassName("yes").style.display = "none"
-        document.getElementsByClassName("no").style.display = "none"
+        img.src = "/artifacts/yayy.jpg";
+        img.style.transform = "none";
+        document.getElementsByClassName("yes").style.visibility = "hidden"
+        document.getElementsByClassName("no").style.visibility = "hidden"
       }
     }
   </script>
