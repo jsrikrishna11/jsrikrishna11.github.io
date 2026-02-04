@@ -135,21 +135,24 @@
     let rotation = 0;
     let sins = 0;
     function handleNo() {
-      // Switch to "Are you sure?" mode
       img = document.getElementById("img_src");
-      if(inAreYouSureMode){
-        document.getElementById("question").textContent = "Anjudu.... will you be my valentine???? 💖";
-        img.src = "/artifacts/request.JPG";
-        inAreYouSureMode = false;
-        return;
-      }
-      img.src = "/artifacts/sure.png";
+      if(!inAreYouSureMode){img.src = "/artifacts/sure.png";
       document.getElementById("question").textContent = "Are you sure?";
       sins += 1;
       document.getElementById("sinCount").textContent = sins;
       document.getElementById("counter").style.display = "block";
       inAreYouSureMode = true;
-
+    }
+      // Switch to "Are you sure?" mode
+      else{
+        document.getElementById("question").textContent = "Anjudu.... will you be my valentine???? 💖";
+        img.src = "/artifacts/request.JPG";
+        img.style.transform = "none";
+        inAreYouSureMode = false;
+        document.getElementById("counter").style.display = "none";
+        return;
+      }
+      
     }
 
     function handleYes() {
@@ -162,6 +165,7 @@
       }
       else {
         img.src = "/artifacts/yayy.jpg";
+        img.style.transform = "none";
         document.getElementById("question").textContent = "I KNEW IT!!!";
         document.getElementById("counter").style.display = "none";
         document.getElementsByClassName("buttons")[0].style.display = "none"
