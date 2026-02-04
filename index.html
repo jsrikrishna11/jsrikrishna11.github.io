@@ -24,7 +24,6 @@
     }
 
      .image {
-      display: none;
       margin-bottom: 20px;
     }
 
@@ -96,7 +95,7 @@
         inAreYouSureMode = false;
         return;
       }
-      document.getElementById("img_src").src = "/artifacts/sure.JPG";
+      document.getElementById("img_src").src = "/artifacts/sure.png";
       document.getElementById("question").textContent = "Are you sure?";
       inAreYouSureMode = true;
 
@@ -107,7 +106,7 @@
         document.getElementById("question").textContent = document.getElementById("question").textContent+"😿";
       }
       else {
-        document.getElementById("img_src").src = "/artifacts/yayy.JPG";
+        document.getElementById("img_src").src = "/artifacts/yayy.jpg";
         document.getElementsByClassName("yes").style.display = "none"
         document.getElementsByClassName("no").style.display = "none"
       }
