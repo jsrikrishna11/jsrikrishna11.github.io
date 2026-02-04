@@ -118,10 +118,10 @@
     </div>
 
     <div id="question" class="question">
-      Anjudu.... will you be my valentine???? 💖
+      Anjuduuuu will you be my valentine???? 💖
     </div>
     <div id="counter" class="counter">
-
+        You Sinned: <span id="sinCount">0</span>
     </div>
 
     <div class="buttons">
@@ -146,7 +146,7 @@
       img.src = "/artifacts/sure.png";
       document.getElementById("question").textContent = "Are you sure?";
       sins += 1;
-      document.getElementById("counter").textContent = "You Sinned:"+sins;
+      document.getElementById("sinCount").textContent = sins;
       document.getElementById("counter").style.display = "block";
       inAreYouSureMode = true;
 
@@ -156,6 +156,8 @@
       img = document.getElementById("img_src");
       if(inAreYouSureMode){
         rotation += 90;
+        sins += 1;
+        document.getElementById("sinCount").textContent = sins;
         img.style.transform = `rotate(${rotation}deg)`;
       }
       else {
