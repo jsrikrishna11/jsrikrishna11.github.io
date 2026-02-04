@@ -2,38 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>I have a question for you!</title>
   <style>
     body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background-color: #ffdde1;
+}
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-40px); }
+}
+.hearts-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  font-size: 28px;
+  line-height: 56px;
+  letter-spacing: 18px;
+  opacity: 0.25;
+  white-space: pre-wrap;
+  animation: float 10s ease-in-out infinite alternate;
+}
 
-      /* Heart emoji background */
-      background-color: #ffdde1;
-      background-image: repeating-linear-gradient(
-        0deg,
-        transparent 0,
-        transparent 40px
-      );
-      position: relative;
-      overflow: hidden;
-    }
-    body::before {
-      content: "💖 💕 💗 💘 💝 💞";
-      position: absolute;
-      inset: 0;
-      font-size: 32px;
-      line-height: 60px;
-      letter-spacing: 20px;
-      opacity: 0.25;
-      white-space: pre-wrap;
-      pointer-events: none;
-    } 
+.hearts-bg::before {
+  content: "💖 💕 💗 💘 💝 💞 💓 💟 💜 💛 💙 ";
+}
+
+/* Card stays clean */
 
     .card {
+      position: relative;
+      z-index: 1;
       background: white;
       padding: 40px;
       border-radius: 20px;
@@ -87,9 +94,42 @@
       background-color: #adb5bd;
       color: white;
     }
+    /* ===== Mobile Optimizations ===== */
+@media (max-width: 768px) {
+
+  .card {
+    width: 90%;
+    padding: 32px 24px;
+    border-radius: 24px;
+  }
+
+  .question {
+    font-size: 22px;
+    line-height: 1.4;
+    margin-bottom: 24px;
+  }
+
+  .image img {
+    width: 280px;        /* Big & expressive */
+    max-width: 90%;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  button {
+    width: 100%;
+    padding: 16px;
+    font-size: 20px;
+    border-radius: 999px;
+  }
+}
   </style>
 </head>
 <body>
+  <div class="hearts-bg"></div>
   <div class="card">
     <div id="image" class="image">
       <img src="/artifacts/request.JPG" id="img_src" alt="Crying Cat">
