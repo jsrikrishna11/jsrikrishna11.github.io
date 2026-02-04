@@ -43,10 +43,19 @@
       transition: width 0.3s ease;
     }
 
-    .question {
+    .question,
+    .counter {
       font-size: 24px;
       color: #e63946;
       margin-bottom: 30px;
+    }
+    .counter
+    {
+      display: none;
+  margin-top: 12px;
+  font-size: 16px;
+  color: #6a040f;
+  font-weight: bold;
     }
 
     .buttons {
@@ -111,6 +120,9 @@
     <div id="question" class="question">
       Anjudu.... will you be my valentine???? 💖
     </div>
+    <div id="counter" class="counter">
+
+    </div>
 
     <div class="buttons">
       <button class="yes" onclick="handleYes()">Yes</button>
@@ -121,7 +133,7 @@
   <script>
     let inAreYouSureMode = false;
     let rotation = 0;
-
+    let sins = 0;
     function handleNo() {
       // Switch to "Are you sure?" mode
       img = document.getElementById("img_src");
@@ -133,6 +145,9 @@
       }
       img.src = "/artifacts/sure.png";
       document.getElementById("question").textContent = "Are you sure?";
+      sins += 1;
+      document.getElementById("counter").textContent = "You Sinned:"+sins;
+      document.getElementById("counter").style.display = "block";
       inAreYouSureMode = true;
 
     }
@@ -146,6 +161,7 @@
       else {
         img.src = "/artifacts/yayy.jpg";
         document.getElementById("question").textContent = "I KNEW IT!!!";
+        document.getElementById("counter").style.display = "none";
         document.getElementsByClassName("buttons")[0].style.display = "none"
       }
     }
