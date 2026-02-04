@@ -72,7 +72,7 @@
 <body>
   <div class="card">
     <div id="image" class="image">
-      <img src="artifacts/request.JPG" id="img_src" alt="Crying Cat">
+      <img src="/artifacts/request.JPG" id="img_src" alt="Crying Cat">
     </div>
 
     <div id="question" class="question">
@@ -92,11 +92,11 @@
       // Switch to "Are you sure?" mode
       if(inAreYouSureMode){
         document.getElementById("question").textContent = "Anjudu.... will you be my valentine???? 💖";
-        document.getElementById("img_src").src = "artifacts/request.JPG";
+        document.getElementById("img_src").src = "/artifacts/request.JPG";
         inAreYouSureMode = false;
         return;
       }
-      document.getElementById("img_src").src = "artifacts/sure.JPG";
+      document.getElementById("img_src").src = "/artifacts/sure.JPG";
       document.getElementById("question").textContent = "Are you sure?";
       inAreYouSureMode = true;
 
@@ -107,7 +107,7 @@
         document.getElementById("question").textContent = document.getElementById("question").textContent+"😿";
       }
       else {
-        document.getElementById("img_src").src = "artifacts/yayy.JPG";
+        document.getElementById("img_src").src = "/artifacts/yayy.JPG";
         document.getElementsByClassName("yes").style.display = "none"
         document.getElementsByClassName("no").style.display = "none"
       }
