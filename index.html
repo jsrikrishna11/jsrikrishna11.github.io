@@ -75,7 +75,7 @@
 
     <div class="buttons">
       <button class="yes" onclick="handleYes()">Yes</button>
-      <button class="no" onclick="handleNo()">No</button>
+      <button class="no"  onclick="handleNo()">No</button>
     </div>
   </div>
 
@@ -84,17 +84,22 @@
 
     function handleNo() {
       // Switch to "Are you sure?" mode
+      if(inAreYouSureMode){
+        document.getElementById("question").textContent = "Anjudu.... will you be my valentine???? 💖";
+        inAreYouSureMode = false;
+        return;
+      }
       document.getElementById("emoji").style.display = "block";
       document.getElementById("question").textContent = "Are you sure?";
       inAreYouSureMode = true;
+
     }
 
     function handleYes() {
-      if (inAreYouSureMode) {
-        // Re-trigger the same "Are you sure?" state (loop)
-        document.getElementById("emoji").style.display = "block";
-        document.getElementById("question").textContent = "Are you sure?";
-      } else {
+      if(inAreYouSureMode){
+        document.getElementById("question").textContent = document.getElementById("question").textContent+"😿";
+      }
+      else {
         alert("Yayyyy! 💖🥰");
       }
     }
