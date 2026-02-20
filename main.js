@@ -9,14 +9,14 @@ fetch('./blog/blog-list.json')
   })
   .catch(err => console.error("Error loading blog list:", err));
 
-function createCard(filename) {
+function createCard(file) {
   const card = document.createElement('div');
   card.className = 'card';
 
-  const title = filename.replace('.md', '');
+  const title = file.title.replace('.md', '');
   card.textContent = title;
 
-  card.addEventListener('click', () => loadBlog(filename));
+  card.addEventListener('click', () => loadBlog(file.file));
 
   grid.appendChild(card);
 }
