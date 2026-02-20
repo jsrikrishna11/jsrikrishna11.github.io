@@ -1,7 +1,12 @@
 [
   {
-    "title": "Structuralism",
-    "file": "post1.md",
+    "title": "Mental Models",
+    "file": "modelsIndex.md",
+    "date": "2026-02-20"
+  },
+    {
+    "title": "Anthropology in Everyday Life",
+    "file": "anthroIndex.md",
     "date": "2026-02-20"
   }
 ]
