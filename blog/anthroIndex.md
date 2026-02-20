@@ -1,1 +1,1 @@
-1. [[structuralism]]
+1. [[structuralism#Structuralism|Structuralism]]

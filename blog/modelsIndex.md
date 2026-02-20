@@ -1,1 +1,1 @@
-1. [[ethnicConflicts]]
+1. [[ethnicConflicts#Analyzing Ethnic Conflicts|Analyzing Ethnic Conflict]]
