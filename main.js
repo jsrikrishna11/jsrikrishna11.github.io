@@ -2,7 +2,7 @@ const grid = document.getElementById('blogGrid');
 const viewer = document.getElementById('viewer');
 
 // Load blog list
-fetch('./blog/blog-list.json')
+fetch('./blog/blog-list.json', { cache: "no-store" })
   .then(res => res.json())
   .then(files => {
     files.forEach(file => createCard(file));
@@ -22,7 +22,7 @@ function createCard(file) {
 }
 
 function loadBlog(filename) {
-  fetch(`./blog/${filename}`)
+  fetch(`./blog/${filename}`, { cache: "no-store" })
     .then(res => res.text())
     .then(markdown => {
       const html = marked.parse(markdown);
