@@ -1,1 +1,3 @@
 # Structuralism
+
+## Historical Background
